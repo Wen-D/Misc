@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+<select id="select" name="cd-dropdown" class="cd-select">
+<option value="-1" selected>Currency</option>
+<option value="1">Dollar $</option>
+<option value="2">Pound £</option>
+<option value="3">Rupees </option>
+<option value="4">Dirham </option>
+</select>
+
+<div class="pr-price d1">$100</div>
+<div class="pr-price d2">£200</div>
+<div class="pr-price d3">Rs300</div>
+<div class="pr-price d4">D400</div>
+
+<script>
+
+    $(function () {
+    $('.pr-price').hide();
+    $('.d2').show();
+        
+    $('#select').on("change",function () {
+        $('.pr-price').hide();
+        $('.d'+$(this).val()).show();
+    }).val("3");
+    });
+
+</script>
+
+    </body>
+</html>
